@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Coursify",
+    "content": "I developed Coursify, an e-learning web app using the MERN stack. I utilized MongoDB for course management, designed the backend with Express and Node.js for smooth data handling, and crafted a responsive user interface with React and Material UI. Additionally, I implemented secure user authentication with JWT to ensure data privacy and secure course access.",
+    "image": "/coursify.webp",
+    "link": "https://coursify-eosin.vercel.app/login",
+    "githubLink": "https://github.com/aryanbhat/coursify",
+    "technologies": [
+      "NodeJS",
+      "Express",
+      "React",
+      "MongoDB",
+      "JWT",
+      "Material UI"
+    ]
+  },
+  {
+    "title": "KnowYourPlace",
+    "content": "I developed a responsive weather news application using HTML, CSS, and JavaScript. I integrated the OpenWeather API for real-time weather information and forecasts, utilized the Geolocation API for automatic location detection and geocoding, and incorporated the NewsCatcher API to fetch news articles related to the user's country.",
+    "link": "https://get-place-info.vercel.app/",
+    "githubLink": "https://github.com/aryanbhat/KnowYourPlace",
+    "image": "/knowyourplace.webp",
+    "technologies": ["HTML", "CSS", "JavaScript", "OpenWeather API"]
+  }
+]

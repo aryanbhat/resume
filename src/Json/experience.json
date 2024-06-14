@@ -1,0 +1,36 @@
+[
+  {
+    "timePeriod": "Nov 2023 - Jun 2024",
+    "Designation": "Full stack Developer (Intern)",
+    "companyName": "L2BC",
+    "content": "I crafted a polished React frontend using Material UI, ensuring seamless user interfaces and an enhanced user experience. On the backend, I engineered an efficient Express server, optimizing performance and enabling real-time communication. I integrated Socket.IO to implement real-time chat features, enhancing user engagement. Additionally, I orchestrated GCP-based file uploads and downloads, complemented by MongoDB for streamlined data management.",
+    "technologies": [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "NodeJs",
+      "Express",
+      "MongoDB",
+      "Socket IO",
+      "Material UI",
+      "Firebase"
+    ],
+    "companyLink": "https://www.last2braincells.com/"
+  },
+  {
+    "timePeriod": "Jul 2023 - Sep 2023",
+    "Designation": "Full stack Developer (Intern)",
+    "companyName": "Axentia Tech",
+    "content": "I built and maintained essential components for seamless React web projects, focusing on user experience and responsive design. Collaborating with cross-functional teams, I crafted dynamic user interfaces with resizable components and styled them using shadcn/ui and Tailwind CSS. Additionally, I developed Express backend services for real-time data retrieval and updates.",
+    "technologies": [
+      "JavaScript",
+      "React",
+      "NodeJs",
+      "Express",
+      "MongoDB",
+      "shadcn/ui",
+      "Tailwind"
+    ],
+    "companyLink": "https://axentia.in/"
+  }
+]
