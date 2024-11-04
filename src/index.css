@@ -7,3 +7,11 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+.coffee-hover {
+  cursor: url("/coffee.svg"), auto;
+}
+
+.coffee-hover:hover {
+  color: #d1a054; /* Optional: change color on hover */
+}

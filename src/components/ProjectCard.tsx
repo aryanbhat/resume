@@ -1,6 +1,7 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { handlePseudoAnchor } from "../utils/navigationHandler";
 
 interface Props {
   title: string;
@@ -57,7 +58,10 @@ const ProjectCard = ({
       </div>
       <img
         src={image}
-        className=" mt-2 transition-all w-48 object-cover rounded-md border-slate-600 border-2 group-hover:border-slate-400 "
+        onClick={() => {
+          handlePseudoAnchor(link, true);
+        }}
+        className=" cursor-pointer mt-2 transition-all w-48 md:w-72 object-cover rounded-md border-slate-600 border-2 group-hover:border-slate-400 "
       />
     </div>
   );
