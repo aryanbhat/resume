@@ -28,7 +28,7 @@ const Experience = () => {
         href="https://drive.google.com/file/d/1AcWhDO2SWrkOYMZL0PBwCqiIhKWaZpds/view?usp=sharing"
         target="_blank"
       >
-        <p className=" text-base font-medium">View Full Résume</p>
+        <p className=" text-base md:text-xl font-medium">View Full Résume</p>
         <FontAwesomeIcon
           icon={faArrowRight}
           size="sm"

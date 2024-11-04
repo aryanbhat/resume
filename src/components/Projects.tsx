@@ -28,7 +28,9 @@ const Projects = () => {
         href="https://github.com/aryanbhat?tab=repositories"
         target="_blank"
       >
-        <p className=" text-base font-medium">View Full Projects Archive</p>
+        <p className=" text-base md:text-xl font-medium">
+          View Full Projects Archive
+        </p>
         <FontAwesomeIcon
           icon={faArrowRight}
           size="sm"

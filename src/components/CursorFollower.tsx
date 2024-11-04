@@ -1,52 +1,52 @@
-"use client";
+import React, { useEffect, useCallback } from "react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
 
-import { useState, useEffect } from "react";
-import { motion, useMotionValue } from "framer-motion";
-
-// Utility function to clamp a value between a min and max
-const clamp = (value: number, min: number, max: number) =>
+const clamp = (value: number, min: number, max: number): number =>
   Math.min(Math.max(value, min), max);
 
-export default function CursorFollower() {
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+export default function CursorFollower(): React.ReactElement {
+  const mouseX: MotionValue<number> = useMotionValue(0);
+  const mouseY: MotionValue<number> = useMotionValue(0);
+
+  const updateMousePosition = useCallback(
+    (ev: MouseEvent): void => {
+      mouseX.set(clamp(ev.clientX, 0, window.innerWidth));
+      mouseY.set(clamp(ev.clientY, 0, window.innerHeight));
+    },
+    [mouseX, mouseY]
+  );
 
   useEffect(() => {
-    // Set initial window size
-    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-
-    const updateMousePosition = (ev: MouseEvent) => {
-      // Constrain x and y within the window boundaries
-      x.set(clamp(ev.clientX, 0, windowSize.width));
-      y.set(clamp(ev.clientY, 0, windowSize.height));
-    };
-
-    const updateWindowSize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    };
-
     window.addEventListener("mousemove", updateMousePosition);
-    window.addEventListener("resize", updateWindowSize);
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
-      window.removeEventListener("resize", updateWindowSize);
     };
-  }, [windowSize]);
+  }, [updateMousePosition]);
+
+  const springConfig: { damping: number; stiffness: number } = {
+    damping: 25,
+    stiffness: 200,
+  };
+  const smoothMouseX: MotionValue<number> = useSpring(mouseX, springConfig);
+  const smoothMouseY: MotionValue<number> = useSpring(mouseY, springConfig);
+
+  const background: MotionValue<string> = useTransform(
+    [smoothMouseX, smoothMouseY],
+    ([latestX, latestY]: number[]): string =>
+      `radial-gradient(600px at ${latestX}px ${latestY}px, rgba(29, 78, 216, 0.15), transparent 80%)`
+  );
 
   return (
     <motion.div
-      className="pointer-events-none fixed inset-0 z-30 overflow-hidden"
-      animate={{
-        background: `radial-gradient(600px at ${x.get()}px ${y.get()}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-      }}
-      transition={{
-        type: "spring",
-        damping: 30,
-        stiffness: 0,
-        restDelta: 0.001,
-      }}
+      className="pointer-events-none fixed inset-0 z-30 overflow-hidden hidden md:block"
+      style={{ background }}
     />
   );
 }
