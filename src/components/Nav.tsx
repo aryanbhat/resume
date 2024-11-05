@@ -1,6 +1,7 @@
 import Links from "./Links";
+import NavSection from "./NavSection";
 
-const Nav = () => {
+const Nav = ({ activeSection }: { activeSection: string }) => {
   return (
     <div className="sm:max-w-sm md:flex md:flex-col md:justify-between md:h-[80vh] md:mt-24 md:fixed md:top-0">
       <div className="flex flex-col gap-3">
@@ -17,6 +18,7 @@ const Nav = () => {
           </span>
         </h4>
       </div>
+      <NavSection activeSection={activeSection} />
       <Links />
     </div>
   );

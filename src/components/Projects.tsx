@@ -5,10 +5,10 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Projects = () => {
   return (
     <div className=" pt-20 w-full ">
-      <h1 className=" text-sm text-slate-200 uppercase font-bold tracking-widest">
+      <h1 className=" text-sm text-slate-200 uppercase font-bold tracking-widest md:hidden">
         Projects
       </h1>
-      <div className=" pt-10 flex flex-col gap-14">
+      <div className=" pt-5 flex flex-col gap-14">
         {projects.map((elem, idx) => {
           return (
             <ProjectCard

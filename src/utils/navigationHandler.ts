@@ -6,3 +6,10 @@ export function handlePseudoAnchor(link: string, newWindow: boolean) {
   a.click();
   document.body.removeChild(a);
 }
+
+export const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
