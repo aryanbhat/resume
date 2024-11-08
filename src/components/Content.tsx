@@ -22,7 +22,6 @@ export default function ContentWithNavigation({
     const observerCallback = (entries: IntersectionObserverEntry[]): void => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log(entry.target.id);
           setActiveSection(entry.target.id);
         }
       });
