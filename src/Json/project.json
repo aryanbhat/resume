@@ -1,5 +1,20 @@
 [
   {
+    "title": "Habitify",
+    "content": "I developed a responsive habit-tracking web application to enhance productivity and consistency. Built with React, TypeScript, and Tailwind CSS, the app features animated elements, calendar heat maps for visual habit tracking, and integrates Firebase Authentication and Firestore for secure user management and data storage. Currently, the app serves 6 active users, with around 37 visitors and 216 page views.",
+    "link": "https://habitifyy.vercel.app/",
+    "githubLink": "https://github.com/aryanbhat/habitify",
+    "image": "/habitify.png",
+    "technologies": [
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Firebase",
+      "Shadcn/ui",
+      "Nivo"
+    ]
+  },
+  {
     "title": "Coursify",
     "content": "I developed Coursify, an e-learning web app using the MERN stack. I utilized MongoDB for course management, designed the backend with Express and Node.js for smooth data handling, and crafted a responsive user interface with React and Material UI. Additionally, I implemented secure user authentication with JWT to ensure data privacy and secure course access.",
     "image": "/coursify.webp",

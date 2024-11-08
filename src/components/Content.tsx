@@ -16,12 +16,13 @@ export default function ContentWithNavigation({
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.8,
+      threshold: 0.2,
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]): void => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          console.log(entry.target.id);
           setActiveSection(entry.target.id);
         }
       });
