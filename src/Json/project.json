@@ -1,7 +1,7 @@
 [
   {
     "title": "Habitify",
-    "content": "I developed a responsive habit-tracking web application to enhance productivity and consistency. Built with React, TypeScript, and Tailwind CSS, the app features animated elements, calendar heat maps for visual habit tracking, and integrates Firebase Authentication and Firestore for secure user management and data storage. Currently, the app serves 6 active users, with around 37 visitors and 216 page views.",
+    "content": "I developed a responsive habit-tracking web application to enhance productivity and consistency. Built with React, TypeScript, and Tailwind CSS, the app features animated elements, calendar heat maps for visual habit tracking, and integrates Firebase Authentication and Firestore for secure user management and data storage. Currently, the app serves 6 active users, with around 54 visitors and 327 page views.",
     "link": "https://habitifyy.vercel.app/",
     "githubLink": "https://github.com/aryanbhat/habitify",
     "image": "/habitify.png",
@@ -10,6 +10,7 @@
       "JavaScript",
       "Tailwind CSS",
       "Firebase",
+      "Redux Toolkit",
       "Shadcn/ui",
       "Nivo"
     ]
