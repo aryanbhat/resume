@@ -31,7 +31,7 @@ export default function Links() {
         />
       </a>
       <a
-        href="https://drive.google.com/file/d/1vLWOWbC7F-u8L9ntmk7ZVF1Ze6sKpNiZ/view"
+        href="https://drive.google.com/file/d/1tfCf2TDygEE7liwmDxUp_RC8PRdKd6EC/view"
         target="_blank"
         className=" resume"
       >
