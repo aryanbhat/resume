@@ -3,7 +3,7 @@
     "timePeriod": "Feb 2025 - Present",
     "Designation": "Full Stack Developer",
     "companyName": "Keen & Able Technologies",
-    "content": "Led a POC migrating legacy PostgreSQL to Apache Iceberg—slashing memory usage—and unified data access via Trino across Iceberg and Kafka. Built responsive, SEO‑friendly Next.js/React pages for the National Portal of India v2 and developed Quarkus/Camel microservices with Kafka pipelines and Superset dashboards to integrate 20+ APIs and surface real‑time insights.",
+    "content": "Led a POC migrating legacy PostgreSQL to Apache Iceberg—slashing memory usage—and unified data access via Trino across Iceberg and Kafka. Worked on the frontend of the National Portal of India v2 using Next.js/React. Developed Quarkus/Camel microservices with Kafka pipelines and Superset dashboards to integrate 20+ APIs and surface real‑time insights.",
     "technologies": [
       "PostgreSQL",
       "Apache Iceberg",
