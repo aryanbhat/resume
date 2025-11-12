@@ -32,7 +32,7 @@ const Experience = () => {
       </div>
       <a
         className="w-fit transition-colors group mt-10 flex align-center items-center gap-2 resume hover:text-teal-300 focus-visible:text-teal-300"
-        href="https://drive.google.com/file/d/1vItyX0M_1q0T0SzcMWqeBpsT1L-l9RgF/view"
+        href="https://drive.google.com/file/d/1hpikJhQiiX52DXlLBE4BVM8k9sEB7csm/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
       >
