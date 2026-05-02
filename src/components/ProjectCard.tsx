@@ -1,7 +1,5 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { handlePseudoAnchor } from "../utils/navigationHandler";
 
 interface Props {
   title: string;
@@ -10,83 +8,69 @@ interface Props {
   link: string;
   githubLink: string;
   technologies: string[];
-  isHovered: boolean;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
 }
 
-const ProjectCard = ({
-  title,
-  content,
-  image,
-  link,
-  githubLink,
-  technologies,
-  isHovered,
-  onMouseEnter,
-  onMouseLeave,
-}: Props) => {
+export default function ProjectCard({ title, content, image, link, githubLink, technologies }: Props) {
   return (
-    <div
-      className={`flex flex-col gap-3 group transition-all duration-300 ease-in-out ${
-        isHovered ? "scale-105 z-10" : "scale-100 z-0"
-      }`}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <div
-        className={`absolute inset-0 bg-white/5 backdrop-blur-sm rounded-lg transition-opacity duration-300 ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}
-      />
-      <div className="relative p-4 rounded-lg">
-        <div className="flex gap-8">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={link}
-            className="w-fit flex items-center gap-2 text-base font-medium hover:text-teal-300 focus-visible:text-teal-300 group/link"
-          >
-            <h1>{title}</h1>
-            <FontAwesomeIcon
-              icon={faArrowRight}
-              size="sm"
-              className="transition-transform group-hover/link:translate-x-3 group-hover/link:-translate-y-2 group-hover/link:-rotate-45"
-            />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={githubLink}
-            className="transition-all hover:text-teal-300 hover:rotate-45"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        </div>
-        <h1 className="text-sm text-slate-400 leading-normal mt-2">
-          {content}
-        </h1>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {technologies.map((elem, idx) => (
-            <div
-              key={idx}
-              className="text-xs bg-teal-400/10 text-teal-300 px-3 py-1 rounded-xl"
+    <div className="group py-8 border-b border-[#e2ddd4] first:border-t">
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+
+        {/* Image */}
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          tabIndex={-1}
+          aria-label={`Open ${title}`}
+          className="shrink-0 block overflow-hidden rounded border border-[#e2ddd4] group-hover:border-[#c8c0b6] transition-colors duration-300"
+        >
+          <img
+            src={image}
+            alt={title}
+            className="w-[130px] sm:w-[175px] aspect-video object-cover scale-100 group-hover:scale-[1.04] transition-transform duration-500"
+          />
+        </a>
+
+        {/* Content */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[15px] font-semibold text-[#1c1916] group-hover:text-[#c47d10] transition-colors duration-200 leading-snug"
             >
-              {elem}
-            </div>
-          ))}
+              {title}
+              <span className="ml-1.5 text-sm text-[#d5cec3] group-hover:text-[#c47d10] transition-colors duration-200">
+                ↗
+              </span>
+            </a>
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              onClick={(e) => e.stopPropagation()}
+              className="shrink-0 text-[#d5cec3] hover:text-[#6b6560] transition-colors duration-200"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </div>
+
+          <p className="text-[13px] text-[#6b6560] leading-[1.8] mb-5">{content}</p>
+
+          <div className="flex flex-wrap gap-1.5">
+            {technologies.map((t, i) => (
+              <span
+                key={i}
+                className="text-[11px] font-mono px-2 py-0.5 bg-[#f0ece4] border border-[#e2ddd4] text-[#8a8278] hover:text-[#6b6560] hover:border-[#c8c0b6] transition-colors duration-200 rounded-sm"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
-        <img
-          src={image}
-          alt={title}
-          onClick={() => {
-            handlePseudoAnchor(link, true);
-          }}
-          className="cursor-pointer mt-4 transition-all w-48 md:w-72 object-cover rounded-md border-slate-600 border-2 group-hover:border-slate-400"
-        />
       </div>
     </div>
   );
-};
-
-export default ProjectCard;
+}

@@ -1,30 +1,30 @@
 [
   {
-    "title": "Habitify",
-    "content": "I developed a responsive habit-tracking web application to enhance productivity and consistency. Built with React, TypeScript, and Tailwind CSS, the app features animated elements, calendar heat maps for visual habit tracking, and integrates Firebase Authentication and Firestore for secure user management and data storage. Currently, the app serves 6 active users, with around 54 visitors and 327 page views.",
+    "title": "Habitifyy",
+    "content": "Habit tracker SPA with Firestore real-time sync, Firebase Auth, and Redux Toolkit. Reached 274 unique visitors and 1.2K pageviews in week one with zero paid promotion. Features calendar heat maps, streak aggregation, and customizable stats with efficient Firestore queries and user-scoped security rules.",
     "link": "https://habitifyy.vercel.app/",
     "githubLink": "https://github.com/aryanbhat/habitify",
     "image": "/habitify.png",
     "technologies": [
+      "React",
       "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
       "Firebase",
       "Redux Toolkit",
-      "Shadcn/ui",
-      "Nivo"
+      "Tailwind CSS",
+      "Firestore",
+      "shadcn/ui"
     ]
   },
   {
     "title": "Coursify",
-    "content": "I developed Coursify, an e-learning web app using the MERN stack. I utilized MongoDB for course management, designed the backend with Express and Node.js for smooth data handling, and crafted a responsive user interface with React and Material UI. Additionally, I implemented secure user authentication with JWT to ensure data privacy and secure course access.",
+    "content": "Complete e-learning platform built solo — React + Material UI frontend, Node.js + Express REST API, MongoDB persistence, JWT auth with role-based access for student and instructor roles. Built from DB schema to UI.",
     "image": "/coursify.webp",
     "link": "https://coursify-eosin.vercel.app/login",
     "githubLink": "https://github.com/aryanbhat/coursify",
     "technologies": [
-      "NodeJS",
-      "Express",
       "React",
+      "Node.js",
+      "Express.js",
       "MongoDB",
       "JWT",
       "Material UI"
@@ -32,10 +32,16 @@
   },
   {
     "title": "KnowYourPlace",
-    "content": "I developed a responsive weather news application using HTML, CSS, and JavaScript. I integrated the OpenWeather API for real-time weather information and forecasts, utilized the Geolocation API for automatic location detection and geocoding, and incorporated the NewsCatcher API to fetch news articles related to the user's country.",
+    "content": "Responsive weather and news app — integrates OpenWeather API for real-time forecasts, Geolocation API for automatic location detection, and NewsCatcher API to surface country-relevant news articles.",
     "link": "https://get-place-info.vercel.app/",
     "githubLink": "https://github.com/aryanbhat/KnowYourPlace",
     "image": "/knowyourplace.webp",
-    "technologies": ["HTML", "CSS", "JavaScript", "OpenWeather API"]
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "OpenWeather API",
+      "Geolocation API"
+    ]
   }
 ]

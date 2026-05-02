@@ -7,46 +7,39 @@ import {
   MotionValue,
 } from "framer-motion";
 
-const clamp = (value: number, min: number, max: number): number =>
-  Math.min(Math.max(value, min), max);
+const clamp = (v: number, min: number, max: number) => Math.min(Math.max(v, min), max);
 
 export default function CursorFollower(): React.ReactElement {
   const mouseX: MotionValue<number> = useMotionValue(0);
   const mouseY: MotionValue<number> = useMotionValue(0);
 
-  const updateMousePosition = useCallback(
-    (ev: MouseEvent): void => {
-      mouseX.set(clamp(ev.clientX, 0, window.innerWidth));
-      mouseY.set(clamp(ev.clientY, 0, window.innerHeight));
+  const update = useCallback(
+    (e: MouseEvent) => {
+      mouseX.set(clamp(e.clientX, 0, window.innerWidth));
+      mouseY.set(clamp(e.clientY, 0, window.innerHeight));
     },
     [mouseX, mouseY]
   );
 
   useEffect(() => {
-    window.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mousemove", update);
+    return () => window.removeEventListener("mousemove", update);
+  }, [update]);
 
-    return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
-    };
-  }, [updateMousePosition]);
+  const spring = { damping: 30, stiffness: 180 };
+  const sx = useSpring(mouseX, spring);
+  const sy = useSpring(mouseY, spring);
 
-  const springConfig: { damping: number; stiffness: number } = {
-    damping: 25,
-    stiffness: 200,
-  };
-  const smoothMouseX: MotionValue<number> = useSpring(mouseX, springConfig);
-  const smoothMouseY: MotionValue<number> = useSpring(mouseY, springConfig);
-
-  const background: MotionValue<string> = useTransform(
-    [smoothMouseX, smoothMouseY],
-    ([latestX, latestY]: number[]): string =>
-      `radial-gradient(600px at ${latestX}px ${latestY}px, rgba(29, 78, 216, 0.15), transparent 80%)`
+  const bg: MotionValue<string> = useTransform(
+    [sx, sy],
+    ([x, y]: number[]) =>
+      `radial-gradient(600px at ${x}px ${y}px, rgba(196, 125, 16, 0.04), transparent 75%)`
   );
 
   return (
     <motion.div
       className="pointer-events-none fixed inset-0 z-30 overflow-hidden hidden md:block"
-      style={{ background }}
+      style={{ background: bg }}
     />
   );
 }

@@ -1,77 +1,80 @@
-const About = () => {
+import SectionLabel from "./SectionLabel";
+
+const Hl = ({ children }: { children: React.ReactNode }) => (
+  <span className="text-[#1c1916] font-semibold">{children}</span>
+);
+
+export default function About() {
   return (
-    <div>
-      <h1 className="text-sm font-bold text-slate-200 tracking-widest uppercase md:hidden">
-        About
-      </h1>
-      <p className="pt-8 md:pt-0 text-slate-400">
-        Hey, I'm Aryan Bhat! A full-stack developer on a mission to make apps
-        that actually make life better—or at least more fun to look at. I’ve
-        bounced around quite a few places in India (Jammu, Mumbai, Chhattisgarh,
-        Gujarat) and picked up a few quirks along the way. This mix of
-        backgrounds gives my work a dynamic edge that keeps things fresh.
-      </p>
-      <p className="pt-5 text-slate-400">
-        With a B.E. in Computer Science and an enduring love for{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          JavaScript
-        </span>
-        ,{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          TypeScript
-        </span>
-        ,{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          React
-        </span>
-        , and a dash of{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          Next.js
-        </span>
-        , I love crafting user-friendly apps with just the right amount of zing.
-        On the backend, you’ll find me working with{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          Node.js
-        </span>
-        ,{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          Firebase
-        </span>
-        , and occasionally{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          Supabase
-        </span>
-        , plus databases like{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          MongoDB
-        </span>{" "}
-        and{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          PostgreSQL
-        </span>{" "}
-        (with some Prisma magic thrown in).
-      </p>
-      <p className="pt-5 text-slate-400">
-        When it comes to styling, I’m a big fan of{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          Tailwind CSS
-        </span>{" "}
-        and{" "}
-        <span className="text-slate-200 font-semibold hover:text-teal-300 focus-visible:text-teal-300 cursor-pointer">
-          shadcn/ui
-        </span>
-        , giving my apps that extra polish to look sharp on any screen.
-      </p>
-      <p className="pt-5 text-slate-400">
-        Outside the code, you’ll find me kicking a football (two nationals and
-        counting!), strumming my guitar, and solving Rubik’s cubes in under 30
-        seconds (though I’m still working on making it look cool). I’m also a
-        reader and always on the lookout for new ideas and inspiration.
-        Basically, I’m here to build meaningful digital experiences that blend
-        creativity, technical know-how, and a bit of humor.
-      </p>
+    <div className="py-20 border-t border-[#e2ddd4]">
+      <SectionLabel number="01" label="About" />
+
+      <div className="grid md:grid-cols-[1fr_230px] gap-12 lg:gap-20">
+        {/* Bio */}
+        <div className="space-y-5 text-[15px] text-[#6b6560] leading-[1.85]">
+          <p>
+            Hey — I'm Aryan. Full-stack engineer with <Hl>2+ years</Hl> building
+            government platforms that real people depend on. Currently at{" "}
+            <a
+              href="https://www.linkedin.com/company/keenable/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1c1916] font-semibold underline underline-offset-2 decoration-[#e2ddd4] hover:text-[#c47d10] hover:decoration-[#c47d10] transition-colors duration-200"
+            >
+              Keen &amp; Able Technologies
+            </a>
+            , where I own the <Hl>National Portal of India</Hl> end-to-end —
+            frontend architecture, backend API design, and a real-time data
+            pipeline that surfaces insights across 20+ integrated APIs.
+          </p>
+          <p>
+            I'm strongest across <Hl>React</Hl>, <Hl>Next.js</Hl>, and{" "}
+            <Hl>Angular</Hl> on the frontend, and <Hl>Node.js</Hl> and{" "}
+            <Hl>FastAPI</Hl> on the backend. I've designed production-grade
+            streaming pipelines with <Hl>Kafka → Iceberg → Trino</Hl> and led
+            a POC migrating legacy PostgreSQL to an open lakehouse, significantly
+            reducing operational memory footprint.
+          </p>
+          <p>
+            Outside work I play football{" "}
+            <span className="football-hover text-[#1c1916] font-semibold cursor-pointer">
+              (two national-level tournaments)
+            </span>
+            , strum guitar, and solve Rubik's cubes in under 30 seconds. I grew
+            up across India — Jammu, Mumbai, Chhattisgarh, Gujarat — which gives
+            me a pretty wide frame of reference.
+          </p>
+        </div>
+
+        {/* Education */}
+        <div>
+          <p className="text-[10px] font-mono text-[#c8c0b6] uppercase tracking-widest mb-5">
+            Education
+          </p>
+          <div className="space-y-6 border-l-2 border-[#e2ddd4] pl-5">
+            <div>
+              <p className="text-sm font-semibold text-[#1c1916] leading-snug">
+                B.Tech Computer Science
+              </p>
+              <p className="text-xs text-[#6b6560] mt-1.5 leading-relaxed">
+                Govt. College of Engineering &amp; Technology
+              </p>
+              <p className="text-xs text-[#6b6560]">CGPA 8.8 / 10</p>
+              <p className="text-[11px] font-mono text-[#a09890] mt-2">2020 — 2024</p>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-[#1c1916] leading-snug">
+                Higher Secondary
+              </p>
+              <p className="text-xs text-[#6b6560] mt-1.5 leading-relaxed">
+                Army Public School Damana, Jammu
+              </p>
+              <p className="text-xs text-[#6b6560]">CGPA 9.5 / 10</p>
+              <p className="text-[11px] font-mono text-[#a09890] mt-2">2018 — 2020</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default About;
+}

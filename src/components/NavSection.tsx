@@ -5,47 +5,46 @@ interface NavSectionProps {
   activeSection: string;
 }
 
-export default function Component(
+export default function NavSection(
   { activeSection }: NavSectionProps = { activeSection: "" }
 ) {
   const navItems = [
-    { type: SECTION_TYPES.ABOUT, label: "About" },
+    { type: SECTION_TYPES.ABOUT,      label: "About"      },
     { type: SECTION_TYPES.EXPERIENCE, label: "Experience" },
-    { type: SECTION_TYPES.PROJECTS, label: "Projects" },
+    { type: SECTION_TYPES.SKILLS,     label: "Skills"     },
+    { type: SECTION_TYPES.PROJECTS,   label: "Projects"   },
   ];
 
   return (
-    <nav className="hidden flex-col gap-3 mb-16 md:flex">
-      {navItems.map((item) => (
-        <div
-          key={item.type}
-          className="flex items-center gap-3 cursor-pointer group"
-          onClick={() => scrollToSection(item.type)}
-        >
-          <span
-            className={`
-              h-[1px] block transition-all duration-300 ease-in-out
-              ${
-                activeSection === item.type
-                  ? "bg-white w-16"
-                  : "bg-slate-500 w-8"
-              }
-            `}
-          />
-          <span
-            className={`
-              group-hover:text-white transition-colors duration-300
-              ${
-                activeSection === item.type
-                  ? "text-white font-medium"
-                  : "text-slate-500"
-              }
-            `}
+    <nav className="hidden md:flex flex-col gap-0.5">
+      {navItems.map((item) => {
+        const active = activeSection === item.type;
+        return (
+          <button
+            key={item.type}
+            onClick={() => scrollToSection(item.type)}
+            className="flex items-center gap-3 py-1.5 group text-left bg-transparent border-none outline-none w-fit"
           >
-            {item.label}
-          </span>
-        </div>
-      ))}
+            {/* Indicator line */}
+            <span
+              className={`block h-px transition-all duration-300 ${
+                active
+                  ? "w-8 bg-[#e8a84c]"
+                  : "w-4 bg-[#2a2a2a] group-hover:w-6 group-hover:bg-[#3a3835]"
+              }`}
+            />
+            <span
+              className={`text-[11px] font-mono uppercase tracking-widest transition-colors duration-300 ${
+                active
+                  ? "text-[#e8a84c]"
+                  : "text-[#3a3835] group-hover:text-[#5a5854]"
+              }`}
+            >
+              {item.label}
+            </span>
+          </button>
+        );
+      })}
     </nav>
   );
 }

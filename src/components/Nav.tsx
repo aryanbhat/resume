@@ -3,24 +3,43 @@ import NavSection from "./NavSection";
 
 const Nav = ({ activeSection }: { activeSection: string }) => {
   return (
-    <div className="sm:max-w-sm md:flex md:flex-col md:justify-between md:h-[80vh] md:mt-24 md:fixed md:top-0">
-      <div className="flex flex-col gap-3">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-300 cursor-pointer">
-          <a href="/">Aryan Bhat</a>
-        </h1>
-        <h3 className="text-lg sm:text-xl font-medium text-slate-300 tracking-tight mt-3">
-          Full Stack Developer
-        </h3>
-        <h4 className="text-md sm:text-lg font-medium text-slate-400 leading-normal mt-4">
-          Building cool stuff with JavaScript, TypeScript, and a dash of{" "}
-          <span className="coffee-hover underline hover:no-underline">
-            caffeine.
-          </span>
-        </h4>
+    <aside className="w-full md:w-[340px] lg:w-[380px] md:fixed md:top-0 md:h-screen md:flex md:flex-col md:justify-between md:py-20 shrink-0">
+
+      {/* Identity block */}
+      <div>
+        <a href="/" className="block group">
+          <h1 className="text-[2.75rem] lg:text-5xl font-bold tracking-tight text-[#e8e4dc] leading-[1.05] group-hover:text-[#e8a84c] transition-colors duration-300">
+            Aryan<br />Bhat
+          </h1>
+        </a>
+
+        <div className="mt-4 flex items-center gap-2">
+          {/* Amber status dot */}
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#e8a84c] animate-pulse" />
+          <p className="text-xs font-mono text-[#5a5854] uppercase tracking-widest">
+            Full Stack Engineer
+          </p>
+        </div>
+
+        <p className="mt-4 text-sm text-[#5a5854] leading-relaxed max-w-[280px]">
+          2+ years building government platforms at scale.
+          End-to-end: DB schema to production.
+        </p>
+
+        {/* Key stat — tasteful, single line */}
+        <div className="mt-5 border-l-2 border-[#e8a84c]/30 pl-3">
+          <p className="text-xs font-mono text-[#e8a84c]/70">
+            3.5M+ monthly users · NPI
+          </p>
+        </div>
       </div>
+
+      {/* Nav links */}
       <NavSection activeSection={activeSection} />
+
+      {/* Social links */}
       <Links />
-    </div>
+    </aside>
   );
 };
 

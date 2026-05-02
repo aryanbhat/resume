@@ -1,25 +1,52 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Inter", sans-serif;
+@layer base {
+  :root {
+    --bg:      #faf7f2;
+    --surface: #f4f0e8;
+    --border:  #e2ddd4;
+    --text:    #1c1916;
+    --muted:   #6b6560;
+    --faint:   #a09890;
+    --accent:  #c47d10;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-.coffee-hover {
-  cursor: url("/coffee.svg"), auto;
+/* Subtle dot-grid texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(circle, #ddd8ce 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-.coffee-hover:hover {
-  color: #d1a054; /* Optional: change color on hover */
+/* Scrollbar */
+::-webkit-scrollbar        { width: 3px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: #d5cec3; border-radius: 2px; }
+
+/* Selection */
+::selection {
+  background-color: rgba(196, 125, 16, 0.15);
+  color: var(--text);
 }
 
-.football-hover {
-  cursor: url("/football.svg"), auto;
-}
-
-.guitar-hover {
-  cursor: url("/guitar.svg"), auto;
-}
+.football-hover { cursor: url("/football.svg"), auto; }
+.coffee-hover   { cursor: url("/coffee.svg"),   auto; }
