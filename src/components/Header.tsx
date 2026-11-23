@@ -51,7 +51,7 @@ export default function Header({ activeSection }: { activeSection: string }) {
         </nav>
 
         <a
-          href="https://drive.google.com/file/d/1iRCpuaXjQKTgXVkiUWCHjnByW5izl5nG/view?usp=sharing"
+          href="https://drive.google.com/file/d/13AimG5lgj0fjQaGZ4w-nqHaBXOwW5n-K/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="md:hidden text-[11px] font-mono uppercase tracking-widest text-[#a09890] hover:text-[#c47d10] transition-colors duration-200"

@@ -11,7 +11,7 @@ const LINKS = [
   { href: "https://www.linkedin.com/in/aryan-bhat/",                                               icon: faLinkedin, label: "LinkedIn" },
   { href: "https://x.com/AryanBh97594879",                                                         icon: faXTwitter, label: "X"        },
   { href: "mailto:aryanbhat324@gmail.com",                                                          icon: faEnvelope, label: "Email"    },
-  { href: "https://drive.google.com/file/d/1iRCpuaXjQKTgXVkiUWCHjnByW5izl5nG/view?usp=sharing",  icon: faFile,     label: "Résumé"   },
+  { href: "https://drive.google.com/file/d/13AimG5lgj0fjQaGZ4w-nqHaBXOwW5n-K/view?usp=sharing",  icon: faFile,     label: "Résumé"   },
 ];
 
 export default function Links() {
